@@ -1,3 +1,4 @@
+// Core task interface
 export interface Task {
   id: string;
   title: string;
@@ -7,6 +8,7 @@ export interface Task {
   createdAt: string;
 }
 
+// Category configuration
 export interface Category {
   id: string;
   label: string;

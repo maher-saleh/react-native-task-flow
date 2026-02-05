@@ -1,50 +1,109 @@
-# Welcome to your Expo app 👋
+# TaskFlow
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A clean and simple task manager app built with React Native and TypeScript.
 
-## Get started
+## What I Built
 
-1. Install dependencies
+This is my solution for the Chapter One React Native tech screen. I wanted to create something useful for managing daily tasks, not just check requirement boxes.
 
-   ```bash
-   npm install
-   ```
+### Core Features
 
-2. Start the app
+* Add tasks with title and optional details
+* Mark tasks as complete/incomplete
+* Delete tasks (with confirmation)
+* Tasks persist between sessions using AsyncStorage
 
-   ```bash
-   npx expo start
-   ```
+### Extra Features
 
-In the output, you'll find options to open the app in a
+* **Category System**: Organize tasks by Work, Personal, Urgent, or Other with color coding
+* **Smart Filtering**: Quick tabs to view All, Active, or Completed tasks
+* **Progress Stats**: See completion rate and task counts at a glance
+* **Clean UI**: Simple design focused on usability
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Tech Stack
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+* React Native with Expo (SDK 50)
+* TypeScript
+* Expo Router (file-based routing)
+* AsyncStorage for data persistence
+* Expo Vector Icons
 
-## Get a fresh project
-
-When you're ready, run:
+## How to Run
 
 ```bash
-npm run reset-project
+# Install dependencies
+npm install
+
+# Start the app
+npx expo start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Then:
 
-## Learn more
+* Press `i` for iOS simulator
+* Press `a` for Android emulator
+* Scan QR code with Expo Go app on your phone
 
-To learn more about developing your project with Expo, look at the following resources:
+## Project Structure
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```
+TaskFlow/
+├── app/
+│   └── (tabs)/
+│       ├── index.tsx          # Main screen
+│       └── _layout.tsx        # Tab navigation
+├── components/
+│   ├── TaskItem.tsx           # Individual task component
+│   └── CategoryPicker.tsx     # Category selection
+├── utils/
+│   └── storage.ts             # AsyncStorage helpers
+├── types/
+│   └── index.ts               # TypeScript interfaces
+└── README.md
+```
 
-## Join the community
+## Design Decisions
 
-Join our community of developers creating universal apps.
+**Why TypeScript?**\
+The Expo template uses it by default, and it's good practice for catching bugs early. Defining clear interfaces for Task and Category made the code more maintainable.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+**Why categories?**\
+I use task apps daily and basic to-do lists feel too simple. Categories help organize without being overwhelming.
+
+**Why this UI approach?**\
+I went with a bottom sheet for adding tasks instead of a separate screen - it feels more modern and keeps you in context.
+
+**Why local storage?**\
+For this test, I focused on getting fundamentals right. AsyncStorage is simple, reliable, and shows I understand state persistence.
+
+## Things I'd Add Next
+
+* Edit task functionality
+* Due dates with reminders
+* Drag to reorder
+* Dark mode
+* Task search
+
+## Development Timeline
+
+\~7 hours over 3 days:
+
+* **Day 1**: Core CRUD + AsyncStorage (4 hours)
+* **Day 2**: Categories, filtering, stats (2 hours)
+* **Day 3**: Polish, testing, docs (1 hour)
+
+Tested on:
+
+* iOS Simulator (iPhone 15)
+* Android device (Pixel 6)
+
+## Contact
+
+Questions about the code? Reach out:
+
+* Email: hire@mahersaleh.com
+* GitHub: @maher-saleh
+
+***
+
+Built with React Native + TypeScript
